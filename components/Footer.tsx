@@ -21,7 +21,7 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
-          <p className="mt-2">© {new Date().getFullYear()} Memel. Tous droits réservés.</p>
+          <p className="mt-2">© {new Date().getFullYear()} Chez Memel. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

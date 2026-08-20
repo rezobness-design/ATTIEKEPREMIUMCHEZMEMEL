@@ -4,9 +4,8 @@ import CartButton from "./CartButton";
 
 const links = [
   { href: "/", label: "Accueil" },
-  { href: "/notre-histoire", label: "Notre Histoire" },
   { href: "/nos-produits", label: "Nos Produits" },
-  { href: "/recettes", label: "Recettes" },
+  { href: "/blog", label: "Blog" },
   { href: "/devenir-distributeur", label: "Distributeur" },
   { href: "/contact", label: "Contact" },
 ];
@@ -16,7 +15,7 @@ export default function Header() {
     <header className="w-full border-b border-memel-brown/10 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <Link href="/" className="text-xl font-bold tracking-wide text-memel-black">
-          Attiéké Memel
+          Attiéké Chez Memel
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
           {links.map((link) => (

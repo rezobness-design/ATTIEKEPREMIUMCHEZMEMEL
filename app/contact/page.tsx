@@ -1,8 +1,9 @@
 import PageShell from "../../components/PageShell";
+import ContactForm from "../../components/ContactForm";
 
 export default function ContactPage() {
   return (
-    <PageShell title="Contact" description="Contactez Memel pour vos commandes, distributeurs et collaborations.">
+    <PageShell title="Contact" description="Contactez Chez Memel pour vos commandes, distributeurs et collaborations.">
       <div className="grid gap-10 lg:grid-cols-2">
         <section className="space-y-6 rounded-[2rem] bg-white/90 p-10 shadow-xl">
           <h2 className="text-2xl font-semibold">Renseignements</h2>
@@ -22,7 +23,7 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-        <section className="rounded-[2rem] bg-[url('/contact-map.jpg')] bg-cover bg-center min-h-[360px] shadow-xl" />
+        <ContactForm />
       </div>
     </PageShell>
   );

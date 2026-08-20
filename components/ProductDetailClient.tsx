@@ -26,6 +26,7 @@ export default function ProductDetailClient({ product, images }: ProductDetailCl
     parsed.push({ slug: product.slug, title: product.title, price: Number(product.price) });
     if (typeof window !== "undefined") {
       window.localStorage.setItem("memel-cart", JSON.stringify(parsed));
+      window.dispatchEvent(new Event("cart-updated"));
     }
     setAdded(true);
   };

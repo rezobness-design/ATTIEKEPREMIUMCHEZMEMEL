@@ -24,7 +24,7 @@ export default function NouveauProduitPage() {
   };
 
   return (
-    <PageShell title="Nouveau produit" description="Ajoutez un nouveau produit au catalogue Memel.">
+    <PageShell title="Nouveau produit" description="Ajoutez un nouveau produit au catalogue Chez Memel.">
       <form onSubmit={submit} className="space-y-6 rounded-[2rem] border border-memel-brown/10 bg-white/90 p-10 shadow-xl">
         <input required placeholder="Titre" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value, slug: e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") })} className="w-full rounded-full border border-memel-brown/20 px-4 py-3" />
         <input required placeholder="Slug" value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} className="w-full rounded-full border border-memel-brown/20 px-4 py-3" />

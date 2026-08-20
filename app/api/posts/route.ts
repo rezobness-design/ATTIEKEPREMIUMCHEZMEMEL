@@ -4,11 +4,12 @@ import { authOptions } from "../../../lib/auth";
 import { prisma } from "../../../lib/prisma";
 
 export async function GET() {
-  const products = await prisma.product.findMany({
+  const posts = await prisma.post.findMany({
+    where: { published: true },
     orderBy: { createdAt: "desc" },
   });
 
-  return NextResponse.json(products);
+  return NextResponse.json(posts);
 }
 
 export async function POST(request: Request) {
@@ -18,18 +19,20 @@ export async function POST(request: Request) {
   }
 
   const data = await request.json();
-  const product = await prisma.product.create({
+
+  if (!data.title || !data.slug || !data.content) {
+    return NextResponse.json({ error: "Titre, slug et contenu sont requis." }, { status: 400 });
+  }
+
+  const post = await prisma.post.create({
     data: {
       title: data.title,
       slug: data.slug,
-      description: data.description,
-      price: Number(data.price),
-      weight: data.weight ?? null,
-      stock: Number(data.stock),
-      category: data.category ?? null,
-      images: data.images ?? "[]",
+      content: data.content,
+      category: data.category || null,
+      published: Boolean(data.published),
     },
   });
 
-  return NextResponse.json(product);
+  return NextResponse.json(post);
 }

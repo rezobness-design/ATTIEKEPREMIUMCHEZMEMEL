@@ -14,7 +14,7 @@ export default function MonComptePage() {
   };
 
   return (
-    <PageShell title="Mon Compte" description="Connectez-vous pour suivre vos commandes et gérer votre expérience Memel.">
+    <PageShell title="Mon Compte" description="Connectez-vous pour suivre vos commandes et gérer votre expérience Chez Memel.">
       <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
         <div className="rounded-[2rem] border border-memel-brown/10 bg-white/90 p-10 shadow-xl">
           <h2 className="text-2xl font-semibold">Connexion</h2>
@@ -31,7 +31,7 @@ export default function MonComptePage() {
           {status === "authenticated" ? (
             <div className="mt-6 space-y-4 text-sm leading-7 text-white/80">
               <p>Bonjour {session?.user?.name || session?.user?.email}</p>
-              <p>Vous êtes connecté à votre compte Memel.</p>
+              <p>Vous êtes connecté à votre compte Chez Memel.</p>
               <button onClick={() => signOut()} className="rounded-full border border-white/50 px-6 py-3 text-white">
                 Se déconnecter
               </button>
