@@ -1,6 +1,8 @@
 import PageShell from "../../../components/PageShell";
 import { prisma } from "../../../lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminMessagesPage() {
   const messages = await prisma.contactMessage.findMany({ orderBy: { createdAt: "desc" } });
 

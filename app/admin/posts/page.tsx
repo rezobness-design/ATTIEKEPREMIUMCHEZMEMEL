@@ -2,6 +2,8 @@ import Link from "next/link";
 import PageShell from "../../../components/PageShell";
 import { prisma } from "../../../lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminPostsPage() {
   const posts = await prisma.post.findMany({ orderBy: { createdAt: "desc" } });
 
